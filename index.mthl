@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP & SL Calculator with Price Chart</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Inkluder Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial/dist/chartjs-chart-financial.min.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Kalkulator Boks -->
+        <div class="box calculator">
+            <h2>TP & SL Calculator</h2>
+            <label for="asset">Select Asset:</label>
+            <select id="asset">
+                <option value="BTC-USD">BTC/USD</option>
+                <option value="ETH-USD">ETH/USD</option>
+                <option value="XAU-USD">Gold (XAU/USD)</option>
+                <option value="AAPL">Apple (AAPL)</option>
+            </select>
+            <br>
+            <button onclick="fetchPrice()">Get Current Price</button>
+            <br>
+            <label for="entryPrice">Entry Price:</label>
+            <input type="number" id="entryPrice" placeholder="Enter entry price" step="0.01">
+            <br>
+            <label for="usdAmount">Trade Size (USD):</label>
+            <input type="number" id="usdAmount" placeholder="Enter trade size in USD" step="0.01">
+            <br>
+            <label for="leverage">Leverage:</label>
+            <input type="number" id="leverage" placeholder="Enter leverage" value="1">
+            <br>
+            <button onclick="calculateTPSL()">Calculate TP & SL</button>
+            <button onclick="saveResult()">Save Result</button>
+            <div id="results">
+                <h3>Take-Profit Points:</h3>
+                <ul id="tpPoints"></ul>
+                <h3>Stop-Loss Points:</h3>
+                <ul id="slPoints"></ul>
+            </div>
+        </div>
+
+        <!-- Candlestick Chart -->
+        <div class="box">
+            <h2>Price Chart</h2>
+            <canvas id="priceChart" width="800" height="400"></canvas>
+        </div>
+
+        <!-- Gemte Resultater Boks -->
+        <div class="box saved-results">
+            <h2>Saved Trades</h2>
+            <div id="savedResultsContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch Price, Calculate TPSL, Save Result, etc. (Include all other functions here as in previous scripts)
+    </script>
+</body>
+</html>
